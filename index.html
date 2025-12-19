@@ -1,146 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collins Kiptoo Langat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collins Kiptoo Langat</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f4f6f8, #e9edf1);
-      color: #333;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f4f6f8, #e9edf1);
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
-    /* Profile picture */
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 30px auto 15px;
-      border: 4px solid white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+/* Profile picture */
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 30px auto 15px;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+}
 
-    /* Header */
-    header {
-      background: #0a2540;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
+/* Header */
+header {
+  background: #0a2540;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+header h1 { margin: 10px 0 5px; }
+header p { margin: 0 0 20px; font-size: 16px; opacity: 0.9; }
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
 
-    header h1 { margin: 10px 0 5px; }
-    header p { margin: 0 0 20px; font-size: 16px; opacity: 0.9; }
+section { max-width: 1000px; margin: auto; padding: 40px 20px; }
+h2 { text-align: center; margin-bottom: 30px; color: #0a2540; }
 
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
+/* About section */
+#about p { text-align: center; max-width: 800px; margin: 10px auto; }
 
-    section { max-width: 1000px; margin: auto; padding: 40px 20px; }
+/* Portfolio grid */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  background: #f0f4ff;
+}
+.card h3 { margin-top: 0; color: #0a2540; }
 
-    h2 { text-align: center; margin-bottom: 30px; color: #0a2540; }
+/* Video thumbnail styling */
+.video-thumb {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.video-thumb:hover { 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
 
-    /* About section */
-    #about p { text-align: center; max-width: 800px; margin: 10px auto; }
+/* Skills section */
+.skill-container { max-width: 800px; margin: auto; padding: 0 20px; }
+.skill-item { margin-bottom: 20px; }
+.skill-item h4 { margin: 0 0 5px; font-size: 16px; color: #0a2540; transition: color 0.3s; }
+.skill-item h4 span { font-size: 12px; color: #555; display: block; margin-top: 2px; }
+.skill-item:hover h4 { color: #06203a; }
+.skill-bar { background: #e0e0e0; border-radius: 8px; height: 20px; overflow: hidden; }
+.skill-level { 
+  height: 100%; 
+  background: #0a2540; 
+  border-radius: 8px; 
+  width: 0; 
+  transition: width 1.5s, background 0.3s; 
+}
+.skill-item:hover .skill-level {
+  background: #06203a;
+}
 
-    /* Portfolio grid */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* Contact section */
+.contact { text-align: center; margin-bottom: 50px; }
+.contact a { color: #0a2540; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+.contact a:hover { color: #06203a; text-decoration: underline; }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .card h3 { margin-top: 0; color: #0a2540; }
+footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #0a2540;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
-    }
-    .btn:hover { background: #06203a; }
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+  animation: modalFade 0.4s ease-in-out;
+}
+@keyframes modalFade {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
 
-    /* Skills section */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    .skill {
-      background: #0a2540;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    /* Contact section */
-    .contact { text-align: center; margin-bottom: 50px; }
-    .contact a { color: #0a2540; text-decoration: none; font-weight: bold; }
-    .contact a:hover { text-decoration: underline; }
-
-    footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
-
-    /* Modal styling */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.6);
-    }
-    .modal-content {
-      background: white;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      position: relative;
-    }
-    .close {
-      position: absolute;
-      top: 10px; right: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 30px 15px; }
-      nav a { display: block; margin: 10px 0; }
-    }
-  </style>
+@media (max-width: 600px) {
+  section { padding: 30px 15px; }
+  nav a { display: block; margin: 10px 0; }
+}
+</style>
 </head>
 
 <body>
@@ -149,7 +160,6 @@
   <img src="Profile.jpg" alt="Collins Kiptoo Langat" class="profile-pic">
   <h1>Collins Kiptoo Langat</h1>
   <p>Software & Technology Enthusiast</p>
-
   <nav>
     <a href="#about">About Me</a>
     <a href="#portfolio">Portfolio</a>
@@ -160,9 +170,8 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Hello! I'm <strong>Collins Kiptoo Langat</strong>, a passionate software and technology enthusiast. Even though I hold a Form Four certificate, I have dedicated myself to learning and building practical skills in <strong>Python programming, web development, document scanning, and video analysis</strong>.</p>
+  <p>Hello! I'm <strong>Collins Kiptoo Langat</strong>, a passionate software and technology enthusiast. I have dedicated myself to learning and building practical skills in <strong>Python programming, web development, document scanning, and video analysis</strong>.</p>
   <p>I enjoy solving real-world problems through technology, whether it’s building useful applications, analyzing farm videos for crop health, or developing efficient tools to make everyday tasks easier.</p>
-  <p>My goal is to keep learning, improving my skills, and sharing my work with the world through projects and collaborations.</p>
 </section>
 
 <section id="portfolio">
@@ -179,75 +188,95 @@
     <div class="card" onclick="openModal('modal3')">
       <h3>Farm Video Analysis</h3>
       <p>Analyzing farm videos to monitor crop and field conditions.</p>
+      <img src="farm-video-thumbnail.jpg" alt="Farm Video" class="video-thumb" onclick="openModal('modal3')">
     </div>
   </div>
 </section>
 
 <section id="skills">
   <h2>My Skills</h2>
-  <div class="skills">
-    <div class="skill">Python</div>
-    <div class="skill">HTML & CSS</div>
-    <div class="skill">GitHub</div>
-    <div class="skill">Video Analysis</div>
-    <div class="skill">Document Processing</div>
-    <div class="skill">Problem Solving</div>
+  <div class="skill-container">
+    <div class="skill-item">
+      <h4>Python <span>(Document Scanner & Farm Video Analysis)</span></h4>
+      <div class="skill-bar"><div class="skill-level" data-width="90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <h4>Web Development <span>(HTML, CSS, JavaScript)</span></h4>
+      <div class="skill-bar"><div class="skill-level" data-width="85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <h4>Data Analysis <span>(Videos & Farm Data)</span></h4>
+      <div class="skill-bar"><div class="skill-level" data-width="80%"></div></div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
   <h2>Contact Me</h2>
-  <p>📧 Email: <strong>lurvinecollins254@gmail.com</strong></p>
-  <p>📞 Phone: <strong>0717757531</strong></p>
-
-  <h3>Find Me On</h3>
-  <p>
-    <a href="https://facebook.com/yourfacebookusername" target="_blank">Facebook</a> | 
-    <a href="https://instagram.com/yourinstagramusername" target="_blank">Instagram</a> | 
-    <a href="https://wa.me/254717757531" target="_blank">WhatsApp</a>
-  </p>
+  <div class="contact">
+    <p>Email: <a href="mailto:collins@example.com">collins@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/lurvinecollins249-collins" target="_blank">github.com/lurvinecollins249-collins</a></p>
+  </div>
 </section>
 
 <footer>
-  © 2025 Collins Kiptoo Langat
+  &copy; 2025 Collins Kiptoo Langat. All rights reserved.
 </footer>
 
 <!-- Modals -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <h2>Personal Website</h2>
-    <p>This is a personal portfolio website built using HTML and CSS, hosted on GitHub Pages. It showcases projects and contact info.</p>
-    <a class="btn" href="https://github.com/lurvinecollins249-collins/personal-website" target="_blank">View on GitHub</a>
+    <h3>Personal Website</h3>
+    <p>This project is my personal website where I showcase my portfolio, skills, and contact information.</p>
   </div>
 </div>
 
 <div id="modal2" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
-    <h2>Document Scanner</h2>
-    <p>A Python application for scanning documents, with image preprocessing and PDF output functionality.</p>
-    <a class="btn" href="https://github.com/lurvinecollins249-collins/document-scanner" target="_blank">View on GitHub</a>
+    <h3>Document Scanner</h3>
+    <p>A Python-based tool that allows scanning and processing of documents efficiently. Includes image enhancements and PDF export.</p>
   </div>
 </div>
 
 <div id="modal3" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal3')">&times;</span>
-    <h2>Farm Video Analysis</h2>
-    <p>Project for analyzing farm videos to monitor crop health and field conditions using computer vision techniques in Python.</p>
-    <a class="btn" href="https://github.com/lurvinecollins249-collins/farm-video-analysis" target="_blank">View on GitHub</a>
+    <h3>Farm Video Analysis</h3>
+    <video controls style="width:100%; border-radius:10px;">
+      <source src="farm-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 
 <script>
-  function openModal(id) { document.getElementById(id).style.display = "block"; }
-  function closeModal(id) { document.getElementById(id).style.display = "none"; }
-  window.onclick = function(event) {
-    document.querySelectorAll('.modal').forEach(modal => {
-      if(event.target == modal) modal.style.display = "none";
-    });
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
   }
+}
+
+// Animate skill bars on scroll
+const skills = document.querySelectorAll('.skill-level');
+function animateSkills() {
+  const trigger = window.innerHeight * 0.85;
+  skills.forEach(skill => {
+    const top = skill.getBoundingClientRect().top;
+    if(top < trigger) {
+      skill.style.width = skill.dataset.width;
+    }
+  });
+}
+window.addEventListener('scroll', animateSkills);
+window.addEventListener('load', animateSkills);
 </script>
 
 </body>
