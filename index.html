@@ -1,76 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collins Kiptoo Langat</title>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0a2540;
       color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 40px 15px;
     }
-    img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-top: 20px;
+
+    nav {
+      margin-top: 15px;
     }
-    h1 {
-      margin-top: 20px;
-      font-size: 26px;
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    p {
-      font-size: 16px;
-      opacity: 0.9;
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
     }
-    a {
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0a2540;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0a2540;
+    }
+
+    .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 10px 18px;
-      border: 1px solid white;
-      border-radius: 20px;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #0a2540;
       color: white;
       text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
     }
-    a:hover {
-      background: white;
-      color: #203a43;
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
-  <img src="profile.jpg" alt="Collins Kiptoo Langat">
-
-
+<header>
   <h1>Collins Kiptoo Langat</h1>
-  <p>Welcome to my personal website</p>
-  
-  <a href="#portfolio">Portfolio</a>
-<a href="#contact">Contact</a>
-  
-  <section id="portfolio" style="margin-top:60px;">
+  <p>Software & Technology Enthusiast</p>
+
+  <nav>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="portfolio">
   <h2>My Portfolio</h2>
 
-  <p><strong>Personal Website</strong><br>
-  A personal portfolio website hosted on GitHub Pages.</p>
+  <div class="portfolio">
 
-  <p><strong>Document Scanner Project</strong><br>
-  A Python-based document scanning application.</p>
+    <div class="card">
+      <h3>Personal Website</h3>
+      <p>A personal portfolio website hosted on GitHub Pages.</p>
+      <a class="btn" href="#">View Project</a>
+    </div>
 
-  <p><strong>Farm Video Analysis</strong><br>
-  Analyzing farm videos for crop and field conditions.</p>
-  </section>
-  <section id="contact" style="margin-top:60px;">
+    <div class="card">
+      <h3>Document Scanner Project</h3>
+      <p>A Python-based document scanning application.</p>
+      <a class="btn" href="#">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>Farm Video Analysis</h3>
+      <p>Analyzing farm videos for crop and field conditions.</p>
+      <a class="btn" href="#">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact">
   <h2>Contact Me</h2>
+  <p>📧 Email: <strong>lurvinecollins254@gmail.com</strong></p>
+  <p>📞 Phone: <strong>0717757531</strong></p>
+</section>
 
-  <p>Email: <a href="mailto:lurvinecollins254@gmail.com">lurvinecollins254@gmail.com</a></p>
-  <p>Phone: 0717757531</p>
-  </section>
+<footer>
+  © 2025 Collins Kiptoo Langat
+</footer>
 
 </body>
 </html>
+
