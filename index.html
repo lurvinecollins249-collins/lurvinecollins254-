@@ -1,38 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collins Kiptoo Langat</title>
+<title>Collins Kiptoo Langat - Portfolio</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f4f6f8, #e9edf1);
+  background: #f4f6f8;
   color: #333;
-  line-height: 1.6;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
-/* Profile picture */
-.profile-pic {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 30px auto 15px;
-  border: 4px solid white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
-/* Header */
 header {
   background: #0a2540;
   color: white;
@@ -40,7 +22,7 @@ header {
   text-align: center;
 }
 header h1 { margin: 10px 0 5px; }
-header p { margin: 0 0 20px; font-size: 16px; opacity: 0.9; }
+header p { margin: 0 0 20px; opacity: 0.9; }
 nav a {
   color: white;
   margin: 0 10px;
@@ -52,10 +34,10 @@ nav a:hover { text-decoration: underline; }
 section { max-width: 1000px; margin: auto; padding: 40px 20px; }
 h2 { text-align: center; margin-bottom: 30px; color: #0a2540; }
 
-/* About section */
+/* About Section */
 #about p { text-align: center; max-width: 800px; margin: 10px auto; }
 
-/* Portfolio grid */
+/* Portfolio Grid */
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -71,59 +53,54 @@ h2 { text-align: center; margin-bottom: 30px; color: #0a2540; }
   text-align: center;
 }
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
   background: #f0f4ff;
 }
 .card h3 { margin-top: 0; color: #0a2540; }
 
-/* Video thumbnail styling */
+/* Video Thumbnail */
 .video-thumb {
   width: 100%;
   border-radius: 10px;
-  cursor: pointer;
   margin-top: 10px;
+  cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.video-thumb:hover { 
-  transform: scale(1.05); 
+.video-thumb:hover {
+  transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Skills section */
-.skill-container { max-width: 800px; margin: auto; padding: 0 20px; }
-.skill-item { margin-bottom: 20px; }
-.skill-item h4 { margin: 0 0 5px; font-size: 16px; color: #0a2540; transition: color 0.3s; }
-.skill-item h4 span { font-size: 12px; color: #555; display: block; margin-top: 2px; }
-.skill-item:hover h4 { color: #06203a; }
-.skill-bar { background: #e0e0e0; border-radius: 8px; height: 20px; overflow: hidden; }
-.skill-level { 
-  height: 100%; 
-  background: #0a2540; 
-  border-radius: 8px; 
-  width: 0; 
-  transition: width 1.5s, background 0.3s; 
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
-.skill-item:hover .skill-level {
-  background: #06203a;
+.skill-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* Contact section */
-.contact { text-align: center; margin-bottom: 50px; }
-.contact a { color: #0a2540; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-.contact a:hover { color: #06203a; text-decoration: underline; }
-
-footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
-
-/* Modal styling */
+/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
   z-index: 100;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  overflow: auto;
   background: rgba(0,0,0,0.6);
+  overflow: auto;
 }
 .modal-content {
   background: white;
@@ -132,11 +109,11 @@ footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
   border-radius: 10px;
   max-width: 600px;
   position: relative;
-  animation: modalFade 0.4s ease-in-out;
+  animation: fadeIn 0.4s ease-in-out;
 }
-@keyframes modalFade {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .close {
   position: absolute;
@@ -145,6 +122,13 @@ footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
   font-weight: bold;
   color: #333;
   cursor: pointer;
+}
+
+footer {
+  background: #0a2540;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 
 @media (max-width: 600px) {
@@ -157,92 +141,84 @@ footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
 <body>
 
 <header>
-  <img src="Profile.jpg" alt="Collins Kiptoo Langat" class="profile-pic">
   <h1>Collins Kiptoo Langat</h1>
-  <p>Software & Technology Enthusiast</p>
+  <p>Software & Technology Enthusiast - Portfolio with Tutorials</p>
   <nav>
     <a href="#about">About Me</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Hello! I'm <strong>Collins Kiptoo Langat</strong>, a passionate software and technology enthusiast. I have dedicated myself to learning and building practical skills in <strong>Python programming, web development, document scanning, and video analysis</strong>.</p>
-  <p>I enjoy solving real-world problems through technology, whether it’s building useful applications, analyzing farm videos for crop health, or developing efficient tools to make everyday tasks easier.</p>
+  <p>Hello! I'm <strong>Collins Kiptoo Langat</strong>, passionate about software and technology. I have practical skills in Python programming, web development, document scanning, and video analysis.</p>
+  <p>I enjoy building projects that solve real-world problems and sharing my knowledge through tutorials and interactive demos.</p>
 </section>
 
 <section id="portfolio">
-  <h2>My Portfolio</h2>
+  <h2>Portfolio Projects</h2>
   <div class="portfolio">
-    <div class="card" onclick="openModal('modal1')">
+    <div class="card" onclick="openModal('modal-website')">
       <h3>Personal Website</h3>
-      <p>A personal portfolio website hosted on GitHub Pages.</p>
+      <p>A portfolio website hosted on GitHub Pages.</p>
     </div>
-    <div class="card" onclick="openModal('modal2')">
+    <div class="card" onclick="openModal('modal-scanner')">
       <h3>Document Scanner</h3>
-      <p>Python-based application for scanning and processing documents.</p>
+      <p>Python application for scanning and processing documents.</p>
     </div>
-    <div class="card" onclick="openModal('modal3')">
+    <div class="card" onclick="openModal('modal-farm')">
       <h3>Farm Video Analysis</h3>
-      <p>Analyzing farm videos to monitor crop and field conditions.</p>
-      <img src="farm-video-thumbnail.jpg" alt="Farm Video" class="video-thumb" onclick="openModal('modal3')">
+      <p>Monitoring crop and field conditions through video analysis.</p>
+      <img src="farm-video-thumbnail.jpg" class="video-thumb" alt="Farm Video" onclick="openModal('modal-farm')">
     </div>
   </div>
 </section>
 
 <section id="skills">
-  <h2>My Skills</h2>
-  <div class="skill-container">
-    <div class="skill-item">
-      <h4>Python <span>(Document Scanner & Farm Video Analysis)</span></h4>
-      <div class="skill-bar"><div class="skill-level" data-width="90%"></div></div>
+  <h2>Skills with Video Tutorials</h2>
+  <div class="skills-grid">
+    <div class="skill-card" onclick="openModal('modal-python')">
+      <h3>Python Programming</h3>
+      <p>Learn Python basics and apply it in document scanning and video analysis.</p>
+      <img src="python-thumb.jpg" class="video-thumb" alt="Python Tutorial">
     </div>
-    <div class="skill-item">
-      <h4>Web Development <span>(HTML, CSS, JavaScript)</span></h4>
-      <div class="skill-bar"><div class="skill-level" data-width="85%"></div></div>
+    <div class="skill-card" onclick="openModal('modal-web')">
+      <h3>Web Development</h3>
+      <p>HTML, CSS, JavaScript fundamentals for interactive websites.</p>
+      <img src="web-thumb.jpg" class="video-thumb" alt="Web Tutorial">
     </div>
-    <div class="skill-item">
-      <h4>Data Analysis <span>(Videos & Farm Data)</span></h4>
-      <div class="skill-bar"><div class="skill-level" data-width="80%"></div></div>
+    <div class="skill-card" onclick="openModal('modal-data')">
+      <h3>Data Analysis</h3>
+      <p>Analyze farm videos and datasets to extract insights.</p>
+      <img src="data-thumb.jpg" class="video-thumb" alt="Data Analysis Tutorial">
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="contact">
-    <p>Email: <a href="mailto:collins@example.com">collins@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/lurvinecollins249-collins" target="_blank">github.com/lurvinecollins249-collins</a></p>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 Collins Kiptoo Langat. All rights reserved.
-</footer>
-
-<!-- Modals -->
-<div id="modal1" class="modal">
+<!-- Project Modals -->
+<div id="modal-website" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <span class="close" onclick="closeModal('modal-website')">&times;</span>
     <h3>Personal Website</h3>
-    <p>This project is my personal website where I showcase my portfolio, skills, and contact information.</p>
+    <p>Portfolio website showcasing my projects and skills.</p>
   </div>
 </div>
 
-<div id="modal2" class="modal">
+<div id="modal-scanner" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <span class="close" onclick="closeModal('modal-scanner')">&times;</span>
     <h3>Document Scanner</h3>
-    <p>A Python-based tool that allows scanning and processing of documents efficiently. Includes image enhancements and PDF export.</p>
+    <video controls style="width:100%; border-radius:10px;">
+      <source src="document-scanner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 
-<div id="modal3" class="modal">
+<div id="modal-farm" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <span class="close" onclick="closeModal('modal-farm')">&times;</span>
     <h3>Farm Video Analysis</h3>
     <video controls style="width:100%; border-radius:10px;">
       <source src="farm-video.mp4" type="video/mp4">
@@ -250,6 +226,44 @@ footer { background: #0a2540; color: white; text-align: center; padding: 15px; }
     </video>
   </div>
 </div>
+
+<!-- Skills Modals -->
+<div id="modal-python" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-python')">&times;</span>
+    <h3>Python Programming Tutorial</h3>
+    <video controls style="width:100%; border-radius:10px;">
+      <source src="python-tutorial.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<div id="modal-web" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-web')">&times;</span>
+    <h3>Web Development Tutorial</h3>
+    <video controls style="width:100%; border-radius:10px;">
+      <source src="web-tutorial.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<div id="modal-data" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-data')">&times;</span>
+    <h3>Data Analysis Tutorial</h3>
+    <video controls style="width:100%; border-radius:10px;">
+      <source src="data-tutorial.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Collins Kiptoo Langat. All rights reserved.
+</footer>
 
 <script>
 function openModal(id) {
@@ -259,24 +273,10 @@ function closeModal(id) {
   document.getElementById(id).style.display = "none";
 }
 window.onclick = function(event) {
-  if (event.target.classList.contains('modal')) {
+  if(event.target.classList.contains('modal')) {
     event.target.style.display = "none";
   }
 }
-
-// Animate skill bars on scroll
-const skills = document.querySelectorAll('.skill-level');
-function animateSkills() {
-  const trigger = window.innerHeight * 0.85;
-  skills.forEach(skill => {
-    const top = skill.getBoundingClientRect().top;
-    if(top < trigger) {
-      skill.style.width = skill.dataset.width;
-    }
-  });
-}
-window.addEventListener('scroll', animateSkills);
-window.addEventListener('load', animateSkills);
 </script>
 
 </body>
